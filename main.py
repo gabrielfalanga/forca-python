@@ -1,8 +1,42 @@
 from palavras import lista_de_palavras
+from desenhoforca import exibir_forca
 from random import randint
 import os
 
+
+def exibir_lacunas():
+    'Exibe primeiro lacunas vazias e, depois, atualizadas com a(s) letra(s) acertada(s).'
+    
+    for char in lacunas:
+        print(char, end='')
+    print('\n')
+
+
+def exibir_letras_erradas():
+    'Exibe a mensagem de letras erradas.'
+    
+    if lista_letras_erradas == []:
+        print()
+    else:
+        print('Erros: ', end='')
+        for letra in lista_letras_erradas:
+            print(f' {letra} ', end='')
+        print()
+
+
+def atualizar_lacunas():
+    'Atualiza as lacunas com a letra acertada.'
+
+    # percorre a palavra secreta, atribuindo às variáveis um indice e sua letra correspondente
+    for indice, letra in enumerate(palavra_secreta):
+        # nas letras que forem a mesma do chute
+        if letra == chute:
+            # adiciona a letra em sua(s) posição(ões)
+            lacunas[indice * 2] = letra
+
+
 def limpar_console():
+    'Limpa o console, independente do sistema operacional.'
     # Verifica o sistema operacional
     if os.name == 'nt':  # Windows
         os.system('cls')
@@ -10,66 +44,84 @@ def limpar_console():
         os.system('clear')
 
 
-indice_palavra_secreta = randint(0, len(lista_de_palavras) - 1)
-palavra_secreta = lista_de_palavras[indice_palavra_secreta]
+# sorteia um índice da lista de palavras
+indice_sorteado = randint(0, len(lista_de_palavras) - 1)
 
-letras_erradas = []
-letras_acertadas = []
-erros = 0
+# atribui a palavra do índice sorteado à variável
+palavra_secreta = lista_de_palavras[indice_sorteado].upper()
 
+# listas de letras já tentadas
+lista_letras_erradas = []
+lista_letras_acertadas = []
+
+# define a quantidade de lacunas de acordo com o n° de letras da palavra
 txt_lacunas = '_ ' * len(palavra_secreta)
+# torna as lacunas em uma lista para que cada caractere seja editável
 lacunas = list(txt_lacunas)
 
+titulo_jogo_forca = '''\
+-----------------------------------
+     J O G O   D A   F O R C A     
+-----------------------------------
+'''
+
+msg = ''
+
+# limpa para remover as informações de path do terminal
 limpar_console()
 
-#  ____
-# |    |
-# |    O
-# |   /|\
-# |   / \
-
-
 while True:
-    # mostra lacunas atualizadas com a letra acertada
-    for char in lacunas:
-        print(char, end='')
-    print('\n')
+    # atualiza a quantidade de erros de acordo com a lista de letras erradas
+    erros = len(lista_letras_erradas)
 
-    if '_' in lacunas:  # ainda há lacunas
+    print(titulo_jogo_forca)    # exibe o título
+    print(msg)                  # exibe mensagem de acerto, erro ou tentativa inválida.
+    exibir_forca(erros)
+    exibir_lacunas()
+    exibir_letras_erradas()
 
-        chute = input('Digite uma letra ==> ').strip().upper()[0]
+    # se o jogador já errou 6 vezes, perdeu
+    if erros == 6:
+        print('\nAaah... Você perdeu. :(')
+        print(f'A palavra era {palavra_secreta}.\n')
+        break
 
-        if chute in letras_erradas or chute in letras_acertadas:
+    # se ainda há lacunas
+    if '_' in lacunas:
+
+        try:
+            chute = input('\nDigite uma letra --> ').strip().upper()[0]
+            # se não for letra
+            if chute.isalpha() == False:
+                msg = 'Tentativa inválida. Digite uma letra.\n'
+                limpar_console()
+            # se ja tiver tentado essa letra    
+            elif chute in lista_letras_erradas or chute in lista_letras_acertadas:
+                msg = f'Você já tentou a letra {chute}.\n'
+                limpar_console()
+            # se acertou (palavra tem essa letra)
+            elif chute in palavra_secreta:
+                lista_letras_acertadas.append(chute)
+                atualizar_lacunas()
+                msg = f'Acertou a letra {chute}!\n'
+                limpar_console()
+            # se errou (palavra não tem essa letra)
+            else:
+                lista_letras_erradas.append(chute)
+                msg = f'A palavra não tem a letra {chute}.\n'
+                limpar_console()
+        # tratamento de erro caso o jogador tecle enter sem digitar
+        except:
+            msg = 'Tentativa inválida. Digite uma letra.\n'
             limpar_console()
-            print(f'Você já tentou a letra {chute}.\n')
-
-        elif chute in palavra_secreta:
-            # adiciona a letra à lista de acertadas
-            letras_acertadas.append(chute)
-            # percorre a palavra secreta, atribuindo às variáveis um indice e sua letra correspondente
-            for indice, letra in enumerate(palavra_secreta):
-                # nas letras que forem a mesma do chute
-                if letra == chute:
-                    # adiciona a letra em sua(s) posição(ões)
-                    lacunas[indice * 2] = letra
-            
-            limpar_console()
-            print(f'Acertou a letra {chute}!\n')
-
-        else:
-            letras_erradas.append(chute)
-            erros += 1
-            limpar_console()
-            print(f'A palavra não tem a letra {chute}.\n')
-    
-    else:   # não há mais lacunas
+    # não há mais lacunas: venceu.
+    else:
         print(f'Parabéns! Você acertou a palavra!')
-        print(f'Erros: {erros}')
+        print(f'Erros: {erros}\n')
         break
 
 
-
-# indice da palavra * 2 = indice dos tracinhos
+# indice da palavra * 2 = indice da lacuna correspondente
 
 # 0123456789012
 # _ _ _ _ _ _ _
