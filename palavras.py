@@ -1,0 +1,21 @@
+lista_de_palavras = [
+    "AFOBADO",
+    "AMENDOIM",
+    "BANHEIRO",
+    "CAATINGA",
+    "CACHORRO",
+    "CAMPEONATO",
+    "CATAPORA",
+    "EMPENHADO",
+    "ESPARADRAPO",
+    "FORCA",
+    "MAGENTA",
+    "MENTA",
+    "MOEDA",
+    "PAÇOCA",
+    "PALAVRA",
+    "PEDREIRO",
+    "PNEUMONIA",
+    "SERENATA",
+    "TRILOGIA"
+]
