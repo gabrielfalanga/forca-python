@@ -84,6 +84,7 @@ while True:
     if erros == 6:
         print('\nAaah... Você perdeu. :(')
         print(f'A palavra era {palavra_secreta}.\n')
+        input('\nTecle \'Enter\' para sair.\n')
         break
 
     # se ainda há lacunas
@@ -116,8 +117,8 @@ while True:
             limpar_console()
     # não há mais lacunas: venceu.
     else:
-        print(f'Parabéns! Você acertou a palavra!')
-        print(f'Erros: {erros}\n')
+        print(f'\nParabéns! Você acertou a palavra!')
+        input('\nTecle \'Enter\' para sair.\n')
         break
 
 
