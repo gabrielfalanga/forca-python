@@ -29,7 +29,7 @@ O jogo irá iniciar, exibindo a forca vazia e espaços vazios representando as l
 - Se a letra estiver incorreta, uma parte do corpo será adicionada à forca. 
 - Você tem 6 tentativas antes de ser enforcado.
 
-## Personalização pessoa
+## Personalização
 
 Você pode personalizar o jogo:
 
