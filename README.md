@@ -16,7 +16,7 @@ O jogo apresenta:
 
 ![GIF](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Z1eWRybHZuZmVhcDcyZHl3MzRidnM4aDUyNGx1Mzl5MHhoM2sybCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/avH4UZcsgqL0VC2Nlc/giphy.gif)
 
-## Como Jogar
+## Como Jogar 💻
 
 1. **Clone o repositório:** `git clone https://github.com/gabrielfalanga/jogo_da_forca.git`
 2. **Navegue até o diretório:** `cd jogo_da_forca`
@@ -29,7 +29,7 @@ O jogo irá iniciar, exibindo a forca vazia e espaços vazios representando as l
 - Se a letra estiver incorreta, uma parte do corpo será adicionada à forca. 
 - Você tem 6 tentativas antes de ser enforcado.
 
-## Personalização
+## Personalização pessoa
 
 Você pode personalizar o jogo:
 
@@ -37,7 +37,7 @@ Você pode personalizar o jogo:
 - **Mudar a dificuldade:** em `desenhoforca.py` é possível adicionar mais versões do desenho da forca e/ou editar as existentes, o que torna possível alterar o limite de erros. Depois disso, é só editar a condição `if erros == 6:` na linha `84` em `main.py`, trocando o número pelo novo limite.
 - **Ajustar a interface:** personalize as mensagens exibidas ao usuário em `main.py`.
 
-## Contribuindo
+## Contribuindo 📈
 
 Sinta-se à vontade para contribuir com este projeto! Você pode:
 
@@ -46,11 +46,11 @@ Sinta-se à vontade para contribuir com este projeto! Você pode:
 - Melhorar o código existente.
 - Adicionar novas palavras.
 
-## Meus objetivos
+## Meus objetivos 🚀
 
 - [ ]  Criar uma tela usando o Flask.
 - [ ]  Adicionar mais palavras na lista.
 
-## Autor
+## Autor ✏
 
 [Gabriel Falanga](https://github.com/gabrielfalanga), eu mesmo! : )
