@@ -1,10 +1,8 @@
-# Jogo da Forca em Python 🐍
-
-Um simples projeto pessoal do jogo da forca implementado em Python.
+<h1 align="center">Jogo da Forca em Python 🐍</h1>
 
 ## Descrição
 
-Este projeto implementa o clássico jogo da forca. O jogador deve adivinhar a palavra secreta, letra por letra, antes de ser enforcado. 
+Este projeto pessoal implementa o clássico jogo da forca. O jogador deve adivinhar a palavra secreta, letra por letra, antes de ser enforcado. 
 
 O jogo apresenta:
 
