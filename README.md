@@ -48,7 +48,7 @@ Sinta-se à vontade para contribuir com este projeto! Você pode:
 
 ## Meus objetivos 🚀
 
-- [ ]  Criar uma tela usando o Flask.
+- [ ] Implementar uma interface gráfica para tornar o jogo mais interativo.
 - [ ]  Adicionar mais palavras na lista.
 
 ## Autor ✏
