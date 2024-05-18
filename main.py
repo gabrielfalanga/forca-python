@@ -1,6 +1,6 @@
 from palavras import lista_de_palavras
 from desenhoforca import exibir_forca
-from random import randint
+import random
 import os
 
 
@@ -44,11 +44,8 @@ def limpar_console():
         os.system('clear')
 
 
-# sorteia um índice da lista de palavras
-indice_sorteado = randint(0, len(lista_de_palavras) - 1)
-
-# atribui a palavra do índice sorteado à variável
-palavra_secreta = lista_de_palavras[indice_sorteado].upper()
+# pega uma palavra aleatória da lista
+palavra_secreta = random.choice(lista_de_palavras).upper()
 
 # listas de letras já tentadas
 lista_letras_erradas = []
