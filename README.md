@@ -14,7 +14,15 @@ O jogo apresenta:
 
 ## Demonstração
 
-![GIF](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Z1eWRybHZuZmVhcDcyZHl3MzRidnM4aDUyNGx1Mzl5MHhoM2sybCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/avH4UZcsgqL0VC2Nlc/giphy.gif)
+<div align="center">
+
+### Ganhando ✅ ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ Perdendo ❌
+
+![GIF](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExejN4ZWZ3c3ozNDZqdmJ0eTFsY2NvNG1ydmRvc2xvdmVtdTkzOHN6ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/EPLlSHjsD9WziZfNuR/giphy.gif)
+![GIF](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHloaXNlcGE3Z3U4N3YzdDJqcWhjdzU2YnoxZXczenJjcHFyaHN0bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IuuAfjLpkuNJbCPD9M/giphy.gif)
+  
+</div>
+
 
 ## Como Jogar 💻
 
